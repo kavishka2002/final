@@ -1,0 +1,1148 @@
+:root {
+    --primary-color: #ff3a3a;
+    --primary-hover: #e02e2e;
+    --secondary-color: #000;
+    --text-color: #666;
+    --light-bg: #f5f5f5;
+    --navbar-height: 70px;
+    /* Define navbar height for body padding */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--secondary-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+    padding-top: var(--navbar-height);
+    /* Added padding for fixed-top navbar */
+}
+
+/* Header Styles */
+.navbar {
+    background-color: #f8f9fa;
+    /* Lightened navbar color */
+    /* border-radius: 50px; */
+    /* Removed for a standard fixed-top navbar */
+    padding: 0.5rem 1rem;
+    /* Adjusted padding */
+    /* margin: 15px auto; */
+    /* Removed for fixed-top */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Lightened shadow */
+    /* max-width: 1300px; */
+    /* Removed, container-fluid handles width */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    min-height: var(--navbar-height);
+}
+
+.navbar.scrolled {
+    /* Optional: for scroll effects via JS */
+    background-color: rgba(248, 249, 250, 0.95);
+    /* Lightened scrolled navbar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Lightened shadow */
+}
+
+.navbar-brand img {
+    height: 50px;
+    /* Adjusted from 60px to better fit new padding */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin: 0 8px;
+    /* Adjusted margin */
+    padding: 0.5rem 0.8rem;
+    /* Consistent padding */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+    /* Subtle rounding for hover effect */
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-item.show>.nav-link {
+    /* For active dropdown toggles */
+    color: var(--primary-color);
+    /* background-color: rgba(255, 58, 58, 0.05); */
+    /* Optional: subtle background on hover */
+}
+
+/* Underline animation for nav-links */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 70%;
+}
+
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    /* Space between toggle and menu */
+    animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.dropdown-divider {
+    margin: 0.5rem 0;
+    border-top: 1px solid #eee;
+}
+
+/* Nested Dropdowns (Submenus) */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    /* Align with parent item */
+    margin-left: 0.1rem;
+    display: none;
+    /* Hidden by default */
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+    /* Show on hover */
+}
+
+.dropdown-submenu>.dropdown-item.dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid transparent;
+    border-right: 0;
+    border-bottom: .3em solid transparent;
+    border-left: .3em solid;
+    /* Caret pointing right */
+    transition: transform 0.2s ease;
+}
+
+/* .dropdown-submenu:hover > .dropdown-item.dropdown-toggle::after {
+     transform: rotate(-90deg); Optional: rotate caret on hover 
+} */
+
+
+/* Navbar action buttons and social icons */
+.navbar .btn-outline-primary,
+.navbar .btn-primary {
+    padding: 8px 20px;
+    font-weight: 600;
+    border-radius: 25px;
+    /* Keeping rounded style for these buttons */
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.navbar .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.navbar .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.navbar .btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 58, 58, 0.2);
+}
+
+.navbar-nav .nav-link i[class^="fa"] {
+    /* For social media icons */
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover i[class^="fa"] {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+
+/* Removing old button styles if not used elsewhere, or keep if they are */
+/* .btn-nav { ... } */
+/* .btn-nav-secondary { ... } */
+/* If btn-nav-secondary is specifically for "Get Involved" and "Invite Us", and you want that exact style,
+   you can re-apply it in the HTML or create new specific classes.
+   The current HTML uses Bootstrap's .btn-outline-primary and .btn-primary.
+   The styles above for .navbar .btn-outline-primary and .navbar .btn-primary aim to match the previous look.
+*/
+
+
+/* Hero Section */
+.hero-section {
+    padding: 60px 0;
+    /* Adjusted padding slightly due to fixed navbar */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: var(--primary-color);
+    /* Changed to primary color for better visibility on dark background */
+}
+
+.hero-text {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn-hero {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.btn-hero:hover {
+    background-color: var(--primary-hover);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 58, 58, 0.2);
+}
+
+.hero-image-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.hero-img {
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hero-img-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: 1;
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 100px 0;
+}
+
+.about-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.about-title span {
+    color: white;
+}
+
+.about-text {
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn-about {
+    border: 2px solid white;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-about:hover {
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+.stat-item {
+    margin-bottom: 30px;
+    /* text-align: center; is now handled by Bootstrap class in HTML */
+}
+
+.stat-number {
+    font-size: 5rem;
+    /* Enlarged from 4.5rem */
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    display: block;
+    /* Ensure it takes full width for text-align */
+    text-align: center;
+    /* Ensure number itself is centered */
+}
+
+.stat-label {
+    background-color: white;
+    color: var(--secondary-color);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Donation Modal Styles */
+.donation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    /* Ensure modal is on top */
+    justify-content: center;
+    align-items: center;
+    /* For the modal itself to be scrollable if content overflows */
+    overflow-y: auto;
+}
+
+.donation-container {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Keep this if you don't want internal scrollbars on this specific container */
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    /* Added margin for when modal content is tall */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.donation-header {
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.donation-header h2 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.donation-body {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) {
+    .donation-container {
+        flex-direction: row;
+    }
+
+    .donation-body {
+        flex-direction: row;
+    }
+}
+
+.donation-info {
+    padding: 30px;
+    background-color: #f9f9f9;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donation-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.donation-info h3 {
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.donation-info p {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.donation-box {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.donation-box h3 {
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.donation-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.donation-type-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-weight: 600;
+    transition: all 0.3s;
+    flex: 1;
+    text-align: center;
+}
+
+.donation-type-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.donation-amounts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.amount-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 12px;
+    border-radius: 15px;
+    font-weight: 600;
+    transition: all 0.3s;
+    flex: 1 0 calc(33% - 20px);
+    min-width: 100px;
+    text-align: center;
+}
+
+.amount-btn:hover,
+.amount-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(255, 58, 58, 0.3);
+}
+
+.amount-display {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    color: var(--primary-color);
+    transition: all 0.3s;
+}
+
+.amount-display:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.donate-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.donate-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 58, 58, 0.4);
+}
+
+.payment-security {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.payment-security i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: none;
+    border: none;
+}
+
+.close-btn:hover {
+    color: #ffdddd;
+    transform: rotate(90deg);
+}
+
+
+/* Styles for Donation Step 2 (Payment Form) */
+#donation-step-2 .form-label {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+}
+
+#donation-step-2 .form-control {
+    border-radius: 8px;
+    /* Consistent with other modal elements */
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+}
+
+#donation-step-2 .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 58, 58, 0.25);
+}
+
+.payment-method-icons {
+    text-align: center;
+}
+
+.payment-method-icons .fab {
+    font-size: 2.5rem;
+    /* Larger icons */
+    margin: 0 0.5rem;
+}
+
+#donation-step-2 .btn-outline-secondary {
+    border-color: #ccc;
+    color: var(--text-color);
+    font-weight: 600;
+    border-radius: 15px;
+    /* Match donate-btn */
+    padding: 15px;
+    /* Match donate-btn */
+}
+
+#donation-step-2 .btn-outline-secondary:hover {
+    background-color: #e9ecef;
+    border-color: #bbb;
+    color: var(--secondary-color);
+}
+
+#donation-step-2 h3 {
+    /* Ensure consistent heading style */
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Footer Styles */
+.footer-section {
+    position: relative;
+    background-color: rgba(224, 66, 66, 0.9); /* Changed to dark background */
+    color: #fff; /* White text color */
+    padding: 80px 0 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.footer-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('5000.png') center/cover no-repeat;
+    opacity: 0.3; /* Increased opacity for better visibility */
+    z-index: -1;
+}
+
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 58, 58, 0.3) 0%, rgba(255, 58, 58, 0.1) 100%);
+    z-index: -1;
+}
+
+.footer-logo {
+    height: 60px;
+    width: auto;
+}
+
+.footer-info p {
+    color: #fff; /* White text color */
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8); /* Lighter icon color */
+    transition: all 0.3s ease;
+}
+
+.footer-social-icon:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 58, 58, 0.3);
+}
+
+.footer-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 12px;
+    color: #fff; /* White text color */
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8); /* Lighter bullet color */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    padding-left: 20px;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    color: #fff; /* White text color */
+}
+
+.footer-contact li i {
+    color: rgba(255, 255, 255, 0.8); /* Lighter icon color */
+    margin-right: 12px;
+    font-size: 1.1rem;
+    margin-top: 3px;
+}
+
+.footer-newsletter h5 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer-newsletter .input-group {
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-newsletter .form-control {
+    border: none;
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 30px 0 0 30px;
+}
+
+.footer-newsletter .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-newsletter .form-control:focus {
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.footer-newsletter .btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 0 30px 30px 0;
+    padding: 0 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-newsletter .btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateX(3px);
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #aaa;
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-links li {
+    margin-left: 20px;
+}
+
+.footer-bottom-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 767.98px) {
+    .footer-bottom-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .footer-bottom-links li {
+        margin: 5px 10px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+}
+
+/* --- DARK NAVBAR STYLES --- */
+.navbar {
+    background-color: #181c24 !important;
+    color: #fff;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.4s cubic-bezier(.4, 0, .2, 1), box-shadow 0.4s cubic-bezier(.4, 0, .2, 1);
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .btn-outline-primary,
+.navbar .btn-primary {
+    color: #fff !important;
+}
+
+.navbar .nav-link {
+    transition: color 0.3s, background 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+.nav-item.show>.nav-link {
+    color: #ff3a3a !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar .btn-outline-primary {
+    border-color: #ff3a3a;
+    color: #ff3a3a !important;
+    background: transparent;
+}
+
+.navbar .btn-outline-primary:hover {
+    background: #ff3a3a;
+    color: #fff !important;
+}
+
+.navbar .btn-primary {
+    background: #ff3a3a;
+    border-color: #ff3a3a;
+    color: #fff !important;
+}
+
+.navbar .btn-primary:hover {
+    background: #e02e2e;
+    border-color: #e02e2e;
+    color: #fff !important;
+}
+
+/* --- COLLAPSED MENU STYLES --- */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: #232837;
+        border-radius: 18px;
+        margin-top: 18px;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+        padding: 24px 18px 18px 18px;
+        animation: slideDownMenu 0.5s cubic-bezier(.4, 0, .2, 1);
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        top: 70px;
+        z-index: 1050;
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff !important;
+        font-size: 1.15rem;
+        padding: 12px 0;
+        border-radius: 8px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        background: rgba(255, 255, 255, 0.08);
+        color: #ff3a3a !important;
+    }
+
+    .dropdown-menu {
+        background: #232837;
+        border-radius: 14px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        animation: fadeInDown 0.4s;
+    }
+
+    .dropdown-item {
+        color: #fff;
+        border-radius: 8px;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+        background: #181c24;
+        color: #ff3a3a;
+    }
+}
+
+@keyframes slideDownMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scaleY(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+/* Optional: Make toggler icon white for dark navbar */
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Make sure dropdowns look good on dark */
+.dropdown-menu {
+    background: #232837;
+    color: #fff;
+    border: none;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background: #181c24;
+    color: #ff3a3a;
+}
+
+/* Social Media Icons Styles */
+.social-icons {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin: 0 3px;
+    border-radius: 50%;
+    background: rgba(255, 58, 58, 0.1);
+    /* Lighter background for icons */
+    color: var(--primary-color);
+    /* Changed to primary color */
+    transition: all 0.3s ease;
+    padding: 0 !important;
+}
+
+.social-icon i {
+    font-size: 1rem;
+}
+
+.social-icon:hover {
+    background: var(--primary-color);
+    color: white;
+    /* Added for contrast */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 58, 58, 0.3);
+}
+
+/* Social icons on mobile */
+@media (max-width: 991.98px) {
+    .social-icons {
+        display: inline-flex;
+        margin: 5px 2px;
+    }
+
+    .navbar-collapse .social-icons {
+        margin-top: 15px;
+    }
+
+    .navbar-nav .social-icons {
+        display: inline-flex;
+    }
+}
+
+/* --- DARK NAVBAR STYLES --- */
+/* Removing dark navbar styles since we want a light navbar */
+.navbar {
+    background-color: #f8f9fa !important;
+    /* Overriding any dark styles */
+    color: var(--text-color);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.4s cubic-bezier(.4, 0, .2, 1), box-shadow 0.4s cubic-bezier(.4, 0, .2, 1);
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: var(--secondary-color) !important;
+    /* Darker text for contrast */
+}
+
+.navbar .btn-outline-primary,
+.navbar .btn-primary {
+    padding: 8px 20px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.navbar .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 58, 58, 0.2);
+}
+
+.navbar .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.navbar .btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 58, 58, 0.2);
+}
+
+.navbar .nav-link {
+    transition: color 0.3s, background 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+.nav-item.show>.nav-link {
+    color: var(--primary-color) !important;
+    background: transparent;
+}

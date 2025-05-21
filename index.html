@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPAG Unity - Bring Smile to Others</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="SPAG PNGv.png" alt="SPAG Unity Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="#who-we-are">Who We Are</a></li>
+                            <li><a class="dropdown-item" href="#our-associations">Our Associations</a></li>
+                            <li><a class="dropdown-item" href="#our-vision-mission">Our Vision and Mission</a></li>
+                            <li><a class="dropdown-item" href="#our-executive-board">Our Executive Board</a></li>
+                            <li><a class="dropdown-item" href="#testimonials">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li><a class="dropdown-item" href="#educational-support">Educational Support</a></li>
+                            <li><a class="dropdown-item" href="#social-support">Social Support</a></li>
+                            <li><a class="dropdown-item" href="#environmental-support">Environmental Support</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Events</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#upcoming-events">Upcoming</a></li>
+                                    <li><a class="dropdown-item" href="#recent-events">Recent</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-us">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Community
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="communityDropdown">
+                            <li><a class="dropdown-item" href="#edify-association">Edify Association</a></li>
+                            <li><a class="dropdown-item" href="#environ-association">Environ Association</a></li>
+                            <li><a class="dropdown-item" href="#kindred-association">Kindred Association</a></li>
+                            <li><a class="dropdown-item" href="#news-blogs">News & Blogs</a></li>
+                        </ul>
+                    </li>
+                    <!-- Social Media Icons for mobile view - Update to avoid duplication -->
+                    <li class="nav-item social-icons d-lg-none">
+                        <a class="nav-link social-icon" href="#" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item social-icons d-lg-none">
+                        <a class="nav-link social-icon" href="#" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item social-icons d-lg-none">
+                        <a class="nav-link social-icon" href="#" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item social-icons d-lg-none">
+                        <a class="nav-link social-icon" href="#" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav align-items-lg-center ms-lg-auto">
+                    <!-- Social Media Icons - Added here -->
+                    <li class="nav-item social-icons me-lg-2">
+                        <a class="nav-link social-icon" href="#" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item social-icons me-lg-2">
+                        <a class="nav-link social-icon" href="#" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item social-icons me-lg-2">
+                        <a class="nav-link social-icon" href="#" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item social-icons me-lg-3">
+                        <a class="nav-link social-icon" href="#" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item me-lg-2 mb-2 mb-lg-0">
+                        <a class="btn btn-outline-primary w-100" href="#">Get Involved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary w-100" href="#">Invite Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <h1 class="hero-title">Bring smile others <br><span>through you</span></h1>
+                    <p class="hero-text">
+                        Your kindness can change lives!<br>
+                        Support SPAG Unity's mission to create a better world<br>
+                        through education, environmental efforts, and charity.<br>
+                        Every donation brings hope and smiles to those in need.<br>
+                        Be the reason for someone's happiness—donate today!
+                    </p>
+                    <button id="openDonationModal" class="btn btn-hero">Donate Now</button>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
+                    <div class="hero-image-container">
+                        <div class="hero-img-bg"></div>
+                        <img src="100.png" alt="SPAG Unity" class="img-fluid hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="about-title">About <span>SPAG</span></h2>
+                    <p class="about-text">
+                        Your kindness can change lives!<br>
+                        Support SPAG Unity's mission to create a better world<br>
+                        through education, environmental efforts, and charity.<br>
+                        Every donation brings hope and smiles to those in need.<br>
+                        Be the reason for someone's happiness—donate today!
+                    </p>
+                    <a href="#" class="btn btn-about">See More</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="stat-item text-center">
+                                <div class="stat-number" id="activeMembers">20</div>
+                                <div class="stat-label">Active members</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="stat-item text-center">
+                                <div class="stat-number" id="projectsDone">10</div>
+                                <div class="stat-label">Project done</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div class="stat-item text-center">
+                                <div class="stat-number" id="happyDonors">12</div>
+                                <div class="stat-label">Happy donors</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="stat-item text-center">
+                                <div class="stat-number" id="volunteers">15</div>
+                                <div class="stat-label">Volunteers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Donation Modal -->
+<div class="donation-modal" id="donationModal">
+    <div class="donation-container">
+        <div class="donation-header">
+            <h2>Support SPAG Unity Today!</h2>
+            <button class="close-btn" id="closeModal">&times;</button>
+        </div>
+        <div class="donation-body">
+            <div class="donation-info">
+                <img src="donatioh.png" alt="Happy children" class="donation-image">
+                <h3>Your Support Makes a Difference</h3>
+                <p>Join us in making a lasting impact. Your support matters!</p>
+                <p>Your generosity fuels progress! With your donation, we can plant more trees, educate more children, and uplift communities in need.</p>
+                <p>Every contribution creates a ripple effect of kindness and transformation.</p>
+            </div>
+            <div class="donation-box">
+                <div id="donation-step-1">
+                    <h3>Secure Donation</h3>
+                    <div class="donation-options">
+                        <button class="donation-type-btn active" id="oneTimeBtn">Give Once</button>
+                        <button class="donation-type-btn" id="monthlyBtn">Monthly</button>
+                    </div>
+                    <div class="donation-amounts">
+                        <button class="amount-btn" data-amount="100">Rs. 100</button>
+                        <button class="amount-btn" data-amount="200">Rs. 200</button>
+                        <button class="amount-btn" data-amount="500">Rs. 500</button>
+                        <button class="amount-btn" data-amount="1000">Rs. 1000</button>
+                        <button class="amount-btn" data-amount="2000">Rs. 2000</button>
+                        <button class="amount-btn" data-amount="5000">Rs. 5000</button>
+                    </div>
+                    <input type="text" class="amount-display" id="amountDisplay" placeholder="Select or enter amount" readonly>
+                    <input type="number" class="form-control mb-3" id="customAmount" placeholder="Or enter custom amount (Rs.)">
+                    <button class="donate-btn" id="proceedToPaymentBtn">Donate Now</button> <!-- Changed ID -->
+                    <div class="payment-security">
+                        <i class="fas fa-lock"></i> Secure payment processed by our trusted partners
+                    </div>
+                </div>
+
+                <div id="donation-step-2" style="display: none;"> <!-- Initially hidden -->
+                    <h3>Enter Payment Details</h3>
+                    <div class="payment-method-icons mb-3">
+                        <i class="fab fa-cc-visa fa-2x me-2" style="color: #1A1F71;"></i>
+                        <i class="fab fa-cc-mastercard fa-2x" style="color: #EB001B;"></i>
+                    </div>
+                    <form id="cardPaymentForm">
+                        <div class="mb-3">
+                            <label for="cardNumber" class="form-label">Card Number</label>
+                            <input type="text" id="cardNumber" class="form-control" placeholder="•••• •••• •••• ••••" required>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="expiryDate" class="form-label">Expiry Date</label>
+                                <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cvv" class="form-label">CVV</label>
+                                <input type="text" id="cvv" class="form-control" placeholder="•••" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cardHolderName" class="form-label">Cardholder Name</label>
+                            <input type="text" id="cardHolderName" class="form-control" placeholder="Name on Card" required>
+                        </div>
+                        <button type="button" class="donate-btn w-100 mb-2" id="confirmPaymentBtn">Pay Rs. <span id="paymentAmountDisplay">0</span></button>
+                        <button type="button" class="btn btn-outline-secondary w-100" id="backToStep1Btn">Back</button>
+                    </form>
+                    <div class="payment-security mt-3">
+                        <i class="fas fa-lock"></i> Your payment is secure.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modern Footer Design for SPAG Unity Website
+
+I'll create a modern, detailed footer design for your website using the #ff3a3a color with a transparent background effect and incorporating a suitable image.
+
+## HTML Implementation
+
+Here's the HTML code for the footer section:
+</div>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                    <div class="footer-info">
+                        <img src="SPAG PNGv.png" alt="SPAG Unity Logo" class="footer-logo">
+                        <p class="mt-4">SPAG Unity works to create positive change through education, environmental initiatives, and community support. Join us in making a difference.</p>
+                        <div class="footer-social-icons mt-4">
+                            <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact-us">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <h4 class="footer-heading">Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#educational-support">Educational Support</a></li>
+                        <li><a href="#social-support">Social Support</a></li>
+                        <li><a href="#environmental-support">Environmental Support</a></li>
+                        <li><a href="#upcoming-events">Upcoming Events</a></li>
+                        <li><a href="#recent-events">Recent Events</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Unity Street, Colombo, Sri Lanka</li>
+                        <li><i class="fas fa-phone"></i> +94 11 234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@spagunity.org</li>
+                    </ul>
+                    <div class="footer-newsletter mt-4">
+                        <h5>Subscribe to our newsletter</h5>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-md-0">© 2023 SPAG Unity. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="footer-bottom-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bg-image"></div>
+</footer>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="script.js"></script>
+</body>
+</html>
